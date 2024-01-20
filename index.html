@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Todo List</title>
+   <link rel="stylesheet" href="./src/scss/all.css">
+</head>
+
+<body class="">
+
+   <div class="container mt-5 pt-4 " id="signupPage">
+      <div class="row justify-content-center g-0">
+         <div class="col-12 col-lg-4 mx-3 ">
+            <div class="d-flex align-items-center justify-content-center my-lg-4 ">
+               <img src="./src/img/check.png" alt="LOGO">
+               <h1 class=" text-nowrap">ONLINE TODO LIST</h1>
+            </div>
+
+            <div class="d-flex justify-content-center mt-lg-3 ">
+               <img src="./src/img/img.png" alt="確認待辦事項中的人" class="d-none d-lg-block">
+            </div>
+         </div>
+
+         <div class="col-12 col-lg-4 p-4 mx-3 ">
+            <h2 class=" mb-4 text-center text-lg-start text-nowrap" style="letter-spacing: 1px;">註冊帳號</h2>
+
+            <form class="needs-validation" novalidate id="signupForm">
+
+               <div class="mb-1">
+                  <label for="mailSignupInput" class="form-label my-3">Email</label>
+                  <input type="email" class="form-control  py-2" id="mailSignupInput" placeholder="請輸入Email" required>
+                  <div class="invalid-feedback">
+                     此欄位不可為空
+                  </div>
+               </div>
+               <div class="mb-1">
+                  <label for="nicknameSignupInput" class="form-label my-3">您的暱稱</label>
+                  <input type="text" class="form-control py-2" id="nicknameSignupInput" placeholder="請輸入您的暱稱" required>
+                  <div class="invalid-feedback">
+                     此欄位不可為空
+                  </div>
+               </div>
+               <div class="mb-1">
+                  <label for="pwdSignupInput" class="form-label my-3">密碼</label>
+                  <input type="password" class="form-control py-2" id="pwdSignupInput" placeholder="請輸入密碼" required>
+                  <div class="invalid-feedback">
+                     此欄位不可為空
+                  </div>
+               </div>
+               <div class="mb-1">
+                  <label for="pwdcheckSignupInput" class="form-label my-3">請再次輸入密碼</label>
+                  <input type="password" class="form-control py-2" id="pwdcheckSignupInput" placeholder="請再次輸入密碼" required>
+                  <div class="invalid-feedback">
+                     此欄位不可為空
+                  </div>
+               </div>
+
+               <div class=" d-flex justify-content-center mt-3">
+                  <button class="btn bg-dark text-light py-2 px-5 my-4" type="submit" id="signupSubmit">註冊帳號</button>
+               </div>
+               <a href="" id="toggleLoginLink" class="text-decoration-none text-dark text-center d-block mt-2">登入</a>
+
+            </form>
+
+         </div>
+
+      </div>
+   </div>
+
+   <div class="container mt-5 pt-5 d-none" id="loginPage">
+      <div class="row justify-content-center g-0">
+         <div class="col-12 col-lg-4 mx-3 ">
+            <div class="d-flex align-items-center justify-content-center ">
+               <img src="./src/img/check.png" alt="LOGO">
+               <h1 class=" text-nowrap">ONLINE TODO LIST</h1>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3 ">
+               <img src="./src/img/img.png" alt="確認待辦事項中的人" class="d-none d-lg-block img-fluid">
+            </div>
+         </div>
+
+         <div class="col-12 col-lg-4 p-4 p-lg-0 mx-3 ">
+            <h2 class="mt-lg-5 mb-4 text-center text-nowrap" style="letter-spacing: 1px;">最實用的線上代辦事項服務</h2>
+
+            <form class="needs-validation" novalidate>
+
+               <div class="mb-3">
+                  <label for="mailLoginInput" class="form-label my-3">Email</label>
+                  <input type="email" class="form-control  py-2" id="mailLoginInput" placeholder="請輸入Email" required>
+                  <div class="invalid-feedback">
+                     此欄位不可為空
+                  </div>
+               </div>
+
+               <div class="mb-3">
+                  <label for="pwdLoginInput" class="form-label my-3">密碼</label>
+                  <input type="password" class="form-control py-2" id="pwdLoginInput" placeholder="請輸入密碼" required>
+                  <div class="invalid-feedback ">
+                     此欄位不可為空
+                  </div>
+               </div>
+
+               <div class=" d-flex justify-content-center mt-3">
+                  <button class="btn bg-dark text-light py-2 px-5 my-4" type="submit" id="loginSubmit">登入</button>
+               </div>
+               <a href="" class="text-decoration-none text-dark text-center d-block mt-2" id="toggleSignupLink">註冊帳號</a>
+
+            </form>
+
+         </div>
+
+      </div>
+   </div>
+
+   <div class="d-none" id="mainPage">
+
+      <div class="container my-4">
+         <div class=" d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center  ">
+               <img src="./src/img/check.png" alt="LOGO">
+               <h1 class=" text-nowrap">ONLINE TODO LIST</h1>
+            </div>
+            <div class="d-flex">
+               <p class="fw-bold px-4 d-none d-lg-block" id="userText">王小明的代辦</p>
+               <a href="#" class="text-dark text-decoration-none" id="logoutLink">登出</a>
+            </div>
+         </div>
+      </div>
+
+      <div class="col-12 d-flex justify-content-center mt-5" id="addtodoText">
+         <div class="col-10 col-lg-5  ">
+            <div class="card mb-2">
+                  <div class="row justify-content-between align-items-center mx-1">
+                     <div class="col">
+                        <input type="text" placeholder="新增代辦事項" id="addTodoInput">
+                     </div>
+                     <div class="col-1 me-sm-2 me-4">
+                        <a href="" class="btn bg-dark text-white " id="addTodoBtn"><i class="bi bi-plus-lg" ></i></a>
+                     </div>
+                  </div>
+            </div> 
+         </div>
+      </div>
+
+      <div class="col-12 d-flex justify-content-center mt-3 " id="showTodo">
+         <div class="col-10 col-lg-5 ">
+            <div class="card card_list">
+
+               <ul class="tab d-flex" id="tab">
+                  <li class="active">全部</li>
+                  <li>待完成</li>
+                  <li>已完成</li>
+               </ul>
+
+
+               <div class="cart_content">
+
+                  <ul class="list" id="todoList">                       
+                     <li>
+                        <label class="checkbox" for="">
+                           <input type="checkbox">
+                           <span>把冰箱發霉的檸檬拿去丟</span>
+                        </label>
+                        <a href="#" ><i class="bi bi-x-lg" data-tag="delete"></i></a>
+                     </li>
+                     <li>
+                        <label class="checkbox" for="">
+                           <input type="checkbox">
+                           <span>把冰箱發霉的檸檬拿去丟</span>
+                        </label>
+                        <a href="#" class="delete"><i class="bi bi-x-lg"></i></a>
+                     </li>
+                     <li>
+                        <label class="checkbox" for="">
+                           <input type="checkbox" checked>
+                           <span>把冰箱發霉的檸檬拿去丟</span>
+                        </label>
+                        <a href="#" class="delete"><i class="bi bi-x-lg"></i></a>
+                     </li>
+                     <li>
+                        <label class="checkbox" for="">
+                           <input type="checkbox" />
+                           <span>把冰箱發霉的檸檬拿去丟</span>
+                        </label>
+                        <a href="#" class="delete"><i class="bi bi-x-lg"></i></a>
+                     </li>
+                  </ul>
+
+                  <div class="list_footer">
+                     <p id="uncompletedItemsText">5 個待完成項目</p>
+                     <a href="#" id="clearCompletedBtn">清除已完成項目</a>
+                  </div>
+               </div>
+            </div> 
+         </div>
+      </div>
+
+      <div class="col-12 mt-5 d-none" id="showEmpty">
+         <div class="d-flex flex-column text-center " >
+            <p class="pb-4">目前尚無待辦事項</p>
+            <div class="" style="width: 280px; margin: 0 auto;">
+               <img class="img-fluid w-100" src="./src/img/empty.png" alt="待新增代辦事項">
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+   <script src="./src/javascript/bootstrapValidation.js"></script>
+   <script src="./src/javascript/all.js"></script>
+</body>
+
+</html>
